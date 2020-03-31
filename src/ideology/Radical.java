@@ -6,5 +6,5 @@ public class Radical implements Ideology {
     public String getIdeology(){ return "radical"; }
 
     @Override
-    public void expressViews(){ System.out.println("Here are my radical views..."); }
+    public void expressViews(){ System.out.println("Here are my radical views...\n"); }
 }

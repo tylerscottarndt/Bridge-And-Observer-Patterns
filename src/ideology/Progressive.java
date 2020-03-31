@@ -6,5 +6,5 @@ public class Progressive implements Ideology {
     public String getIdeology() { return "progressive";}
 
     @Override
-    public void expressViews() { System.out.println("Here are my progressive views..."); }
+    public void expressViews() { System.out.println("Here are my progressive views...\n"); }
 }

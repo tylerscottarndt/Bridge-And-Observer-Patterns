@@ -9,19 +9,14 @@ import politician.Republican;
 
 public class Main {
     public static void main(String[] args){
+
+        // Bridge Pattern
         Democrat democrat = new Democrat("Francis Underwood", "South Carolina", new Radical());
-        democrat.sayHello();
-
-        breakLine();
-
         Republican republican = new Republican("William Conway", "New York", new Moderate());
-        republican.sayHello();
-
-        breakLine();
-
         Independent independent = new Independent("Alex Romero", "Arizona", new Progressive());
+
+        democrat.sayHello();
+        republican.sayHello();
         independent.sayHello();
     }
-
-    public static void breakLine(){ System.out.println(); }
 }

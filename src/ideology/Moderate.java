@@ -6,5 +6,5 @@ public class Moderate implements Ideology {
     public String getIdeology(){ return "moderate"; }
 
     @Override
-    public void expressViews(){ System.out.println("Here are my moderate views..."); }
+    public void expressViews(){ System.out.println("Here are my moderate views...\n"); }
 }
