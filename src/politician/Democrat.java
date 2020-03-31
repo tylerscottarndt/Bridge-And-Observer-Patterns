@@ -3,10 +3,6 @@ package politician;
 import ideology.Ideology;
 
 public class Democrat extends Politician {
-    private String name;
-    private String state;
-    private Ideology ideology;
-
     public Democrat(String name, String state, Ideology ideology){
         super(name, state, ideology);
     }

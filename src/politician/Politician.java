@@ -3,9 +3,9 @@ package politician;
 import ideology.Ideology;
 
 abstract class Politician {
-    private final String name;
-    private final String state;
-    private final Ideology ideology;
+    protected final String name;
+    protected final String state;
+    protected final Ideology ideology;
 
 
     protected Politician(String name, String state, Ideology ideology){
@@ -15,5 +15,4 @@ abstract class Politician {
     }
 
     protected void sayHello(){}
-
 }
