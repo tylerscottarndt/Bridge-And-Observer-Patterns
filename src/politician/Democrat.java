@@ -7,6 +7,7 @@ public class Democrat extends Politician {
         super(name, state, ideology);
     }
 
+    @Override
     public void sayHello(){
         System.out.println("Hello, my name is " + name + ".");
         System.out.println("I am a proud " + ideology.getIdeology() + " Democrat from the great state of " + state + "!");

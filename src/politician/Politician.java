@@ -2,11 +2,10 @@ package politician;
 
 import ideology.Ideology;
 
-abstract class Politician {
+public abstract class Politician{
     protected final String name;
     protected final String state;
     protected final Ideology ideology;
-
 
     protected Politician(String name, String state, Ideology ideology){
         this.name = name;
@@ -14,5 +13,7 @@ abstract class Politician {
         this.ideology = ideology;
     }
 
-    protected void sayHello(){}
+    public void sayHello(){}
+
+    public String getName() { return name; }
 }
