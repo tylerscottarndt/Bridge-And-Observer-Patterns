@@ -8,7 +8,9 @@ import politician.*;
 import scoreboard.Scoreboard;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args){
@@ -35,18 +37,19 @@ public class Main {
         nominees.add(republican1);
         nominees.add(independent1);
 
-        System.out.println("The 2020 Presidential Nominees:\n");
-        for(Politician p : nominees){
-            System.out.println(p.getName());
-        }
-        System.out.println();
+        System.out.println("The 2020 Presidential Nominees:");
+        nominees.stream()
+                .map(Politician::getName)
+                .forEach(System.out::println);
 
-        // Scoreboard observer
-        Scoreboard scoreboard = new Scoreboard();
+        System.out.println();
 
         // Election subject
         Election election = new Election();
-        election.register(scoreboard);
+
+        // Scoreboard observer
+        Scoreboard scoreboard = new Scoreboard(election);
+
 
         System.out.println("The polls are now open!\n");
         election.simulateElection();

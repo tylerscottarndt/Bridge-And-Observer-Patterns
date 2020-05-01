@@ -1,23 +1,30 @@
 package scoreboard;
 
+import election.Election;
+import election.Subject;
+
 public class Scoreboard implements Observer {
     private int democratVotes;
     private int republicanVotes;
     private int independentVotes;
     private final int THRESH;
+    private final Election election;
 
-    public Scoreboard(){
+    public Scoreboard(Subject election){
+        this.election = (Election) election;
         democratVotes = 0;
         republicanVotes = 0;
         independentVotes = 0;
         THRESH = 270;
+
+        election.register(this);
     }
 
     @Override
-    public void update(int democratVotes, int republicanVotes, int independentVotes) {
-        this.democratVotes = democratVotes;
-        this.republicanVotes = republicanVotes;
-        this.independentVotes = independentVotes;
+    public void update() {
+        this.democratVotes = election.getDemocratVotes();
+        this.republicanVotes = election.getRepublicanVotes();
+        this.independentVotes = election.getIndependentVotes();
 
         displayScoreboard();
         checkForWinner();

@@ -38,9 +38,15 @@ public class Election implements Subject {
     @Override
     public void notifyObserver() {
         for(Observer observer : observers){
-            observer.update(democratVotes, republicanVotes, independentVotes);
+            observer.update();
         }
     }
+
+    public int getDemocratVotes(){ return democratVotes; }
+
+    public int getRepublicanVotes(){ return republicanVotes; }
+
+    public int getIndependentVotes(){ return independentVotes; }
 
     public void simulateElection(){
         Random rand = new Random();
